@@ -1,7 +1,7 @@
 'use server';
 
 /**
- * @fileOverview An AI agent that detects the user's current career stage and provides relevant guidance and resources.
+ * @fileOverview A Stella agent that detects the user's current career stage and provides relevant guidance and resources.
  *
  * - detectCareerStage - A function that handles the career stage detection process.
  * - DetectCareerStageInput - The input type for the detectCareerStage function.
@@ -47,9 +47,9 @@ const prompt = ai.definePrompt({
   name: 'detectCareerStagePrompt',
   input: {schema: DetectCareerStageInputSchema},
   output: {schema: DetectCareerStageOutputSchema},
-  prompt: `You are an AI career advisor specializing in identifying student\'s career stages.
+  prompt: `You are a Stella career advisor specializing in identifying student's career stages.
 
-  Based on the student profile and recent activities, determine the student\'s current career stage and provide relevant guidance and resources.
+  Based on the student profile and recent activities, determine the student's current career stage and provide relevant guidance and resources.
 
   The career stages are:
   - Exploration: Exploring different career options and learning about various industries.

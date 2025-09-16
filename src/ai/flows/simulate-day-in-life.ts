@@ -29,7 +29,7 @@ const prompt = ai.definePrompt({
   name: 'simulateDayInLifePrompt',
   input: {schema: SimulateDayInLifeInputSchema},
   output: {schema: SimulateDayInLifeOutputSchema},
-  prompt: `You are Stella, an AI-powered tool that provides realistic simulations of a 'day in the life' for different careers.
+  prompt: `You are Stella, a tool that provides realistic simulations of a 'day in the life' for different careers.
 
   Provide a detailed simulation of a day in the life for the following career path:
 

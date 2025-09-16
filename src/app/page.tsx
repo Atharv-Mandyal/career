@@ -37,13 +37,13 @@ async function CareerStageCard() {
                     <Rocket className="size-5" />
                     Your Career Stage
                 </CardTitle>
-                <CardDescription>AI-powered career stage analysis</CardDescription>
+                <CardDescription>Stella-powered career stage analysis</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="flex flex-col items-center justify-center text-center p-4 border border-dashed rounded-lg bg-muted/50 h-full">
                     <AlertTriangle className="size-8 text-destructive mb-2" />
                     <p className="font-semibold text-destructive">Could not load analysis</p>
-                    <p className="text-sm text-muted-foreground">The AI service may be temporarily unavailable.</p>
+                    <p className="text-sm text-muted-foreground">The Stella service may be temporarily unavailable.</p>
                 </div>
             </CardContent>
         </Card>

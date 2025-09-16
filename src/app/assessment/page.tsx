@@ -72,7 +72,7 @@ export default function AssessmentPage() {
       <Card>
         <CardHeader>
           <CardTitle>Tell us about yourself</CardTitle>
-          <CardDescription>Your answers will help our AI find the best matches for you.</CardDescription>
+          <CardDescription>Your answers will help our Stella find the best matches for you.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>

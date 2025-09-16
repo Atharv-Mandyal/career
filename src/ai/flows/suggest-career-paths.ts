@@ -1,7 +1,7 @@
 'use server';
 
 /**
- * @fileOverview AI-driven career path suggestion flow based on user interests and aptitudes.
+ * @fileOverview Stella-driven career path suggestion flow based on user interests and aptitudes.
  *
  * - suggestCareerPaths - A function that suggests potential career paths.
  * - SuggestCareerPathsInput - The input type for the suggestCareerPaths function.

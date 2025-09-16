@@ -29,7 +29,7 @@ const prompt = ai.definePrompt({
   name: 'outlineEducationalPathsPrompt',
   input: {schema: OutlineEducationalPathsInputSchema},
   output: {schema: OutlineEducationalPathsOutputSchema},
-  prompt: `You are Stella, an AI assistant specialized in providing educational guidance for various careers.
+  prompt: `You are Stella, an assistant specialized in providing educational guidance for various careers.
 
   Based on the career provided, outline the educational qualifications, institutions, and steps required to pursue that career.
 

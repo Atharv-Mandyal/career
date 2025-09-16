@@ -17,7 +17,7 @@ function CareerList() {
     const suggestedCareers = suggestionsParam ? decodeURIComponent(suggestionsParam).split(',') : [];
 
     const careersToShow = suggestedCareers.length > 0 && suggestedCareers[0] !== '' ? suggestedCareers : allCareers;
-    const title = suggestedCareers.length > 0 && suggestedCareers[0] !== '' ? "AI Suggested Career Paths" : "Explore Career Paths";
+    const title = suggestedCareers.length > 0 && suggestedCareers[0] !== '' ? "Stella Suggested Career Paths" : "Explore Career Paths";
     const description = suggestedCareers.length > 0 && suggestedCareers[0] !== ''
       ? "Based on your assessment, here are some careers you might love."
       : "Browse through various career options to find your passion.";

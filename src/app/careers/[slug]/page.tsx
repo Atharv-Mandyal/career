@@ -29,7 +29,7 @@ async function DayInLifeSimulation({ careerPath }: { careerPath: string }) {
           <CardTitle className="flex items-center gap-2 font-headline">
             <Telescope className="size-5" />A Day in the Life of a {careerPath}
           </CardTitle>
-          <CardDescription>An AI-powered simulation of a typical day.</CardDescription>
+          <CardDescription>A Stella-powered simulation of a typical day.</CardDescription>
         </CardHeader>
         <CardContent>
           {groupedParts.length > 0 ? (
@@ -55,13 +55,13 @@ async function DayInLifeSimulation({ careerPath }: { careerPath: string }) {
           <CardTitle className="flex items-center gap-2 font-headline">
             <Telescope className="size-5" />A Day in the Life of a {careerPath}
           </CardTitle>
-          <CardDescription>An AI-powered simulation of a typical day.</CardDescription>
+          <CardDescription>A Stella-powered simulation of a typical day.</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col items-center justify-center text-center p-8 border border-dashed rounded-lg bg-muted/50">
             <AlertTriangle className="size-8 text-destructive mb-2" />
             <p className="font-semibold text-destructive">Could not load simulation</p>
-            <p className="text-sm text-muted-foreground">The AI service may be temporarily unavailable. Please try again later.</p>
+            <p className="text-sm text-muted-foreground">The Stella service may be temporarily unavailable. Please try again later.</p>
           </div>
         </CardContent>
       </Card>
@@ -110,7 +110,7 @@ async function EducationalPath({ careerPath }: { careerPath: string }) {
             <div className="flex flex-col items-center justify-center text-center p-8 border border-dashed rounded-lg bg-muted/50">
                 <AlertTriangle className="size-8 text-destructive mb-2" />
                 <p className="font-semibold text-destructive">Could not load roadmap</p>
-                <p className="text-sm text-muted-foreground">The AI service may be temporarily unavailable. Please try again later.</p>
+                <p className="text-sm text-muted-foreground">The Stella service may be temporarily unavailable. Please try again later.</p>
             </div>
             </CardContent>
         </Card>
