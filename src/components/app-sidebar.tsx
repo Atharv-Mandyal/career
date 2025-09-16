@@ -27,7 +27,7 @@ export default function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar collapsible="icon" className="hidden md:flex">
+    <Sidebar collapsible="icon" className="md:flex">
       <SidebarHeader>
         <AppLogo />
       </SidebarHeader>
