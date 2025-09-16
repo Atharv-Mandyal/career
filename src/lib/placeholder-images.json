@@ -53,6 +53,42 @@
       "description": "3D Rendered Architectural Model",
       "imageUrl": "https://picsum.photos/seed/203/600/400",
       "imageHint": "3d model"
+    },
+    {
+      "id": "course-1",
+      "description": "AI & Machine Learning",
+      "imageUrl": "https://picsum.photos/seed/301/600/400",
+      "imageHint": "tech course"
+    },
+    {
+      "id": "course-2",
+      "description": "Web Development Bootcamp",
+      "imageUrl": "https://picsum.photos/seed/302/600/400",
+      "imageHint": "coding course"
+    },
+    {
+      "id": "course-3",
+      "description": "UI/UX Design Masterclass",
+      "imageUrl": "https://picsum.photos/seed/303/600/400",
+      "imageHint": "design course"
+    },
+    {
+      "id": "course-4",
+      "description": "Data Science with Python",
+      "imageUrl": "https://picsum.photos/seed/304/600/400",
+      "imageHint": "data course"
+    },
+    {
+      "id": "course-5",
+      "description": "Digital Marketing Strategy",
+      "imageUrl": "https://picsum.photos/seed/305/600/400",
+      "imageHint": "marketing course"
+    },
+    {
+      "id": "course-6",
+      "description": "Cybersecurity Essentials",
+      "imageUrl": "https://picsum.photos/seed/306/600/400",
+      "imageHint": "security course"
     }
   ]
 }

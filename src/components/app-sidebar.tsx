@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Briefcase, ClipboardList, LayoutDashboard, Map, User, Video, BookOpen } from 'lucide-react';
+import { Briefcase, ClipboardList, LayoutDashboard, Map, User, Video, BookOpen, GraduationCap as CoursesIcon } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -20,6 +20,7 @@ const navItems = [
   { href: '/roadmap', label: 'Roadmap', icon: Map },
   { href: '/interviews', label: 'Interviews', icon: Video },
   { href: '/portfolio', label: 'Portfolio', icon: User },
+  { href: '/courses', label: 'Courses', icon: CoursesIcon },
   { href: '/resources', label: 'Resources', icon: BookOpen },
 ];
 
