@@ -1,32 +1,54 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Rocket, History } from "lucide-react";
+import { Check, Rocket, History, AlertTriangle } from "lucide-react";
 import Link from "next/link";
 import React from 'react';
 import { detectCareerStage } from "@/ai/flows/detect-career-stage";
 import { Skeleton } from "@/components/ui/skeleton";
 
 async function CareerStageCard() {
-  const aiInput = {
-    studentProfile: "High school student interested in technology and arts, good at math.",
-    recentActivities: "Completed an online coding bootcamp, attended a design workshop.",
-  };
-  const { careerStage, guidance } = await detectCareerStage(aiInput);
+  try {
+    const aiInput = {
+      studentProfile: "High school student interested in technology and arts, good at math.",
+      recentActivities: "Completed an online coding bootcamp, attended a design workshop.",
+    };
+    const { careerStage, guidance } = await detectCareerStage(aiInput);
 
-  return (
-    <Card className="h-full">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Rocket className="size-5" />
-          Your Career Stage
-        </CardTitle>
-        <CardDescription>{careerStage}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground">{guidance}</p>
-      </CardContent>
-    </Card>
-  );
+    return (
+      <Card className="h-full">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Rocket className="size-5" />
+            Your Career Stage
+          </CardTitle>
+          <CardDescription>{careerStage}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">{guidance}</p>
+        </CardContent>
+      </Card>
+    );
+  } catch (error) {
+    console.error("Failed to detect career stage:", error);
+    return (
+        <Card className="h-full">
+            <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                    <Rocket className="size-5" />
+                    Your Career Stage
+                </CardTitle>
+                <CardDescription>AI-powered career stage analysis</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <div className="flex flex-col items-center justify-center text-center p-4 border border-dashed rounded-lg bg-muted/50 h-full">
+                    <AlertTriangle className="size-8 text-destructive mb-2" />
+                    <p className="font-semibold text-destructive">Could not load analysis</p>
+                    <p className="text-sm text-muted-foreground">The AI service may be temporarily unavailable.</p>
+                </div>
+            </CardContent>
+        </Card>
+    )
+  }
 }
 
 function ProgressTracker() {
