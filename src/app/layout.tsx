@@ -3,8 +3,10 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import AppSidebar from '@/components/app-sidebar';
 import { SidebarProvider, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar';
-import { Sheet, SheetContent } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import AppLogo from '@/components/app-logo';
+import { PanelLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Future Compass',
@@ -28,20 +30,20 @@ export default function RootLayout({
             <div className="relative flex min-h-screen">
                 <AppSidebar />
                 <div className='md:hidden'>
-                  <Sheet>
-                    <SheetContent side="left" className='p-0'>
-                      <AppSidebar />
-                    </SheetContent>
-                  </Sheet>
+                  {/* This Sheet is for the mobile sidebar */}
                 </div>
                 <SidebarInset>
                   <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:hidden">
                     <Sheet>
-                      <SidebarTrigger asChild>
-                        <SheetContent side="left" className='p-0'>
-                          <AppSidebar />
-                        </SheetContent>
-                      </SidebarTrigger>
+                      <SheetTrigger asChild>
+                        <Button variant="ghost" size="icon" className='h-7 w-7'>
+                          <PanelLeft />
+                          <span className="sr-only">Toggle Sidebar</span>
+                        </Button>
+                      </SheetTrigger>
+                      <SheetContent side="left" className='p-0'>
+                        <AppSidebar />
+                      </SheetContent>
                     </Sheet>
                     <AppLogo />
                   </header>
