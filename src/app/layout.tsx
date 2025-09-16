@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/s
 import AppLogo from '@/components/app-logo';
 import { PanelLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import MobileSidebar from '@/components/mobile-sidebar';
 
 export const metadata: Metadata = {
   title: 'Future Compass',
@@ -29,9 +30,6 @@ export default function RootLayout({
         <SidebarProvider>
             <div className="relative flex min-h-screen">
                 <AppSidebar />
-                <div className='md:hidden'>
-                  {/* This Sheet is for the mobile sidebar */}
-                </div>
                 <SidebarInset>
                   <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:hidden">
                     <Sheet>
@@ -43,7 +41,7 @@ export default function RootLayout({
                       </SheetTrigger>
                       <SheetContent side="left" className='p-0'>
                         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                        <AppSidebar />
+                        <MobileSidebar />
                       </SheetContent>
                     </Sheet>
                     <AppLogo />

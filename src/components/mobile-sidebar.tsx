@@ -23,11 +23,11 @@ const navItems = [
   { href: '/resources', label: 'Resources', icon: BookOpen },
 ];
 
-export default function AppSidebar() {
+export default function MobileSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar collapsible="icon" className="hidden md:flex">
+    <Sidebar>
       <SidebarHeader>
         <AppLogo />
       </SidebarHeader>
@@ -38,7 +38,6 @@ export default function AppSidebar() {
               <SidebarMenuButton
                 asChild
                 isActive={pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))}
-                tooltip={{ children: item.label, side: 'right' }}
               >
                 <Link href={item.href}>
                   <item.icon />
