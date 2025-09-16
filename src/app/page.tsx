@@ -47,7 +47,7 @@ async function CareerStageCard() {
                 </div>
             </CardContent>
         </Card>
-    )
+    );
   }
 }
 
