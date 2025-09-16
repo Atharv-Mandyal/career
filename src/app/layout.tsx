@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import AppSidebar from '@/components/app-sidebar';
-import { SidebarProvider, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import AppLogo from '@/components/app-logo';
 import { PanelLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -42,6 +42,7 @@ export default function RootLayout({
                         </Button>
                       </SheetTrigger>
                       <SheetContent side="left" className='p-0'>
+                        <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                         <AppSidebar />
                       </SheetContent>
                     </Sheet>
