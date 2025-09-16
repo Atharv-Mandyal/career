@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "interview-1",
+      "description": "Dr. Anya Sharma - AI Researcher",
+      "imageUrl": "https://picsum.photos/seed/101/600/400",
+      "imageHint": "professional interview"
+    },
+    {
+      "id": "interview-2",
+      "description": "Ben Carter - Lead Game Designer",
+      "imageUrl": "https://picsum.photos/seed/102/600/400",
+      "imageHint": "professional interview"
+    },
+    {
+      "id": "interview-3",
+      "description": "Chloe Davis - Sustainable Architect",
+      "imageUrl": "https://picsum.photos/seed/103/600/400",
+      "imageHint": "professional interview"
+    },
+    {
+      "id": "interview-4",
+      "description": "Marcus Chen - Data Scientist",
+      "imageUrl": "https://picsum.photos/seed/104/600/400",
+      "imageHint": "professional interview"
+    },
+    {
+      "id": "interview-5",
+      "description": "Isabelle Rodriguez - Marine Biologist",
+      "imageUrl": "https://picsum.photos/seed/105/600/400",
+      "imageHint": "professional interview"
+    },
+    {
+      "id": "interview-6",
+      "description": "Leo Maxwell - Product Manager",
+      "imageUrl": "https://picsum.photos/seed/106/600/400",
+      "imageHint": "professional interview"
+    },
+    {
+      "id": "portfolio-project-1",
+      "description": "E-commerce Website Redesign",
+      "imageUrl": "https://picsum.photos/seed/201/600/400",
+      "imageHint": "website ui"
+    },
+    {
+      "id": "portfolio-project-2",
+      "description": "Mobile Banking App Concept",
+      "imageUrl": "https://picsum.photos/seed/202/600/400",
+      "imageHint": "app screen"
+    },
+    {
+      "id": "portfolio-project-3",
+      "description": "3D Rendered Architectural Model",
+      "imageUrl": "https://picsum.photos/seed/203/600/400",
+      "imageHint": "3d model"
+    }
+  ]
 }
