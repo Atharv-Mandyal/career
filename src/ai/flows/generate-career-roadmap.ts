@@ -11,7 +11,7 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
 
-export const GenerateCareerRoadmapInputSchema = z.object({
+const GenerateCareerRoadmapInputSchema = z.object({
   career: z.string().describe('The career for which to generate a roadmap.'),
 });
 export type GenerateCareerRoadmapInput = z.infer<typeof GenerateCareerRoadmapInputSchema>;
@@ -22,7 +22,7 @@ const RoadmapStageSchema = z.object({
     steps: z.array(z.string()).describe('A list of actionable steps or milestones for this stage.'),
 });
 
-export const GenerateCareerRoadmapOutputSchema = z.object({
+const GenerateCareerRoadmapOutputSchema = z.object({
   career: z.string(),
   roadmap: z.array(RoadmapStageSchema),
 });
