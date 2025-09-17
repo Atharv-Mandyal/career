@@ -3,38 +3,32 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import AppSidebar from '@/components/app-sidebar';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import AppLogo from '@/components/app-logo';
 import { PanelLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import MobileSidebar from '@/components/mobile-sidebar';
 import { ThemeProvider } from '@/components/theme-provider';
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'EduRes',
   description: 'Your guide to a successful career.',
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params: {locale}
 }: Readonly<{
   children: React.ReactNode;
-  params: {locale: string};
 }>) {
-  const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <NextIntlClientProvider messages={messages}>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
@@ -67,7 +61,6 @@ export default async function RootLayout({
                 <Toaster />
             </SidebarProvider>
           </ThemeProvider>
-        </NextIntlClientProvider>
       </body>
     </html>
   );
