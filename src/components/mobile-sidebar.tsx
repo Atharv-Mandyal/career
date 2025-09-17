@@ -1,8 +1,9 @@
 'use client';
 
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import { usePathname } from 'next/navigation';
 import { Briefcase, ClipboardList, LayoutDashboard, Map, User, Video, BookOpen, GraduationCap as CoursesIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import {
   Sidebar,
   SidebarContent,
@@ -14,20 +15,28 @@ import {
 } from '@/components/ui/sidebar';
 import AppLogo from '@/components/app-logo';
 import { ThemeToggle } from './theme-toggle';
-
-const navItems = [
-  { href: '/', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/assessment', label: 'Assessment', icon: ClipboardList },
-  { href: '/careers', label: 'Careers', icon: Briefcase },
-  { href: '/roadmap', label: 'Roadmap', icon: Map },
-  { href: '/interviews', label: 'Interviews', icon: Video },
-  { href: '/portfolio', label: 'Portfolio', icon: User },
-  { href: '/courses', label: 'Courses', icon: CoursesIcon },
-  { href: '/resources', label: 'Resources', icon: BookOpen },
-];
+import { LanguageSwitcher } from './language-switcher';
 
 export default function MobileSidebar() {
   const pathname = usePathname();
+  const t = useTranslations('AppSidebar');
+
+  const navItems = [
+    { href: '/', label: t('dashboard'), icon: LayoutDashboard },
+    { href: '/assessment', label: t('assessment'), icon: ClipboardList },
+    { href: '/careers', label: t('careers'), icon: Briefcase },
+    { href: '/roadmap', label: t('roadmap'), icon: Map },
+    { href: '/interviews', label: t('interviews'), icon: Video },
+    { href: '/portfolio', label: t('portfolio'), icon: User },
+    { href: '/courses', label: t('courses'), icon: CoursesIcon },
+    { href: '/resources', label: t('resources'), icon: BookOpen },
+  ];
+
+  const getIsActive = (href: string) => {
+    // Remove locale from pathname
+    const cleanedPathname = pathname.replace(/^\/[a-z]{2}\//, '/').replace(/^\/[a-z]{2}$/, '/');
+    return href === '/' ? cleanedPathname === href : cleanedPathname.startsWith(href);
+  }
 
   return (
     <Sidebar>
@@ -40,7 +49,7 @@ export default function MobileSidebar() {
             <SidebarMenuItem key={item.href}>
               <SidebarMenuButton
                 asChild
-                isActive={pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))}
+                isActive={getIsActive(item.href)}
               >
                 <Link href={item.href}>
                   <item.icon />
@@ -51,7 +60,8 @@ export default function MobileSidebar() {
           ))}
         </SidebarMenu>
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="flex-row gap-2">
+        <LanguageSwitcher />
         <ThemeToggle />
       </SidebarFooter>
     </Sidebar>

@@ -1,0 +1,28 @@
+{
+  "AppSidebar": {
+    "dashboard": "Dashboard",
+    "assessment": "Assessment",
+    "careers": "Careers",
+    "roadmap": "Roadmap",
+    "interviews": "Interviews",
+    "portfolio": "Portfolio",
+    "courses": "Courses",
+    "resources": "Resources"
+  },
+  "DashboardPage": {
+    "welcome": "Welcome to Your Dashboard",
+    "description": "Let's shape your future, one step at a time.",
+    "assessmentCtaTitle": "Ready to discover your path?",
+    "assessmentCtaDescription": "Our career assessment is the perfect starting point. It helps you understand your strengths and suggests careers that match your profile.",
+    "assessmentCtaButton": "Start Assessment",
+    "careerStageCardTitle": "Your Career Stage",
+    "careerStageCardDescription": "Stella-powered career stage analysis",
+    "journeyCardTitle": "Your Journey",
+    "journeyCardDescription": "A timeline of your progress so far.",
+    "nextStepsCardTitle": "Next Steps",
+    "nextStepsCardDescription": "Your personalized checklist to stay on track."
+  },
+  "LanguageSwitcher": {
+    "toggle": "Change language"
+  }
+}
