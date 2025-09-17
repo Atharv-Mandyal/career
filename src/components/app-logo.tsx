@@ -6,7 +6,7 @@ export default function AppLogo() {
     <div className="flex items-center gap-3 px-2 py-1">
       <Compass className="size-8 text-primary" />
       <h1 className="text-xl font-bold font-headline tracking-tighter text-foreground group-data-[collapsible=icon]:hidden">
-        Future Compass
+        EduRes
       </h1>
     </div>
   );

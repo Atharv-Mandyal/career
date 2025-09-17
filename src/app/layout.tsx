@@ -11,7 +11,7 @@ import MobileSidebar from '@/components/mobile-sidebar';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Future Compass',
+  title: 'EduRes',
   description: 'Your guide to a successful career.',
 };
 
