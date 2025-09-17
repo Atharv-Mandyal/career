@@ -11,7 +11,7 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
 
-export const FindLearningResourcesInputSchema = z.object({
+const FindLearningResourcesInputSchema = z.object({
   career: z.string().describe('The career for which to find learning resources.'),
 });
 export type FindLearningResourcesInput = z.infer<typeof FindLearningResourcesInputSchema>;
@@ -23,7 +23,7 @@ const ResourceSchema = z.object({
   description: z.string().describe('A brief description of what the resource covers.'),
 });
 
-export const FindLearningResourcesOutputSchema = z.object({
+const FindLearningResourcesOutputSchema = z.object({
   resources: z.array(ResourceSchema).describe('A list of curated learning resources.'),
 });
 export type FindLearningResourcesOutput = z.infer<typeof FindLearningResourcesOutputSchema>;
