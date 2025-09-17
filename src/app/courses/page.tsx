@@ -11,7 +11,7 @@ export default function CoursesPage() {
   // Manually add pricing info for demonstration
   const coursesWithPricing = courses.map((course, index) => {
     if (index % 2 === 0) {
-      return { ...course, price: '4999', isPaid: true };
+      return { ...course, price: '799', isPaid: true };
     }
     return { ...course, price: 'Free', isPaid: false };
   });
