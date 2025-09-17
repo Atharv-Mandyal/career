@@ -2,7 +2,7 @@
 import { useSearchParams } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Lightbulb } from 'lucide-react';
-import Link from 'next-intl/link';
+import Link from 'next/link';
 import { Suspense } from 'react';
 
 function CareerList() {

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Rocket, History, AlertTriangle } from "lucide-react";
-import Link from "next-intl/link";
+import Link from "next/link";
 import React from 'react';
 import { detectCareerStage } from "@/ai/flows/detect-career-stage";
 import { Skeleton } from "@/components/ui/skeleton";
