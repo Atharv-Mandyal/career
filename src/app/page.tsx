@@ -1,50 +1,69 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Compass } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
+import Image from 'next/image';
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <header className="px-4 lg:px-6 h-16 flex items-center">
         <Link href="/" className="flex items-center justify-center">
           <AppLogo />
           <span className="sr-only">EduRes</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <nav className="ml-auto hidden lg:flex gap-6 items-center">
           <Link
-            href="/dashboard"
-            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+            className="text-sm font-medium hover:text-primary transition-colors"
           >
-            Dashboard
+            Home
           </Link>
+          <Link
+            href="#"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            About
+          </Link>
+          <Link
+            href="#"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            Services
+          </Link>
+          <Link
+            href="#"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            Contact
+          </Link>
+          <Button variant="ghost">Login</Button>
+          <Button>Sign Up</Button>
         </nav>
       </header>
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Navigate Your Future with EduRes
-                  </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Discover personalized career paths, gain essential skills, and build your portfolio. Your journey to a successful career starts here.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button asChild size="lg">
-                    <Link href="/dashboard">
-                      Get Started <ArrowRight className="ml-2 size-5" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-              <Compass className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square size-64 text-primary" />
-            </div>
+      <main className="flex-1 flex flex-col items-center justify-center text-center">
+        <div className="space-y-6">
+          <div className="p-2 bg-gradient-to-br from-primary/50 to-background rounded-2xl inline-block">
+             <Image 
+                src="https://picsum.photos/seed/stella/400/400" 
+                alt="Stella AI placeholder"
+                width={400}
+                height={400}
+                className="rounded-xl"
+                data-ai-hint="abstract gradient"
+              />
           </div>
-        </section>
+          <div className="space-y-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-headline tracking-tighter">
+              Hello. I'm Stella.
+            </h1>
+            <p className="max-w-md mx-auto text-lg text-muted-foreground">
+              Your personal career navigator. Let's find your star.
+            </p>
+          </div>
+          <Button asChild size="lg">
+            <Link href="/dashboard">Begin Your Journey</Link>
+          </Button>
+        </div>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-muted-foreground">
