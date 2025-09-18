@@ -120,7 +120,6 @@ function PersonalizedChecklist() {
 }
 
 export default function DashboardPage() {
-
   return (
     <div className="space-y-8">
       <div>
@@ -129,10 +128,10 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="rounded-xl p-6 flex flex-col justify-between lg:col-span-2 bg-gradient-to-br from-gray-100 to-gray-200 text-foreground dark:bg-gradient-to-br dark:from-primary/10 dark:to-background">
+        <div className="rounded-xl p-6 flex flex-col justify-between lg:col-span-2 bg-gradient-to-br from-gray-700 to-gray-900 text-white dark:bg-gradient-to-br dark:from-[#4A90E2]/20 dark:to-[#4A90E2]/5">
           <div>
             <h2 className="text-2xl font-bold font-headline">Ready to discover your path?</h2>
-            <p className="mt-2 max-w-prose text-muted-foreground">
+            <p className="mt-2 max-w-prose text-gray-300">
               Our career assessment is the perfect starting point. It helps you understand your strengths and suggests careers that match your profile.
             </p>
           </div>
