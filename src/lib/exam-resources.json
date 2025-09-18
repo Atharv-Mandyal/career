@@ -4,38 +4,32 @@
     {
       "id": "jee-main",
       "name": "JEE Main",
-      "logoUrl": "https://picsum.photos/seed/jee-main/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/jee-main/40/40"
     },
     {
       "id": "jee-advanced",
       "name": "JEE Advanced",
-      "logoUrl": "https://picsum.photos/seed/jee-adv/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/jee-adv/40/40"
     },
     {
       "id": "nta-abhyas",
       "name": "NTA Abhyas (JEE Main)",
-      "logoUrl": "https://picsum.photos/seed/nta/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/nta/40/40"
     },
     {
       "id": "mht-cet",
       "name": "MHT CET",
-      "logoUrl": "https://picsum.photos/seed/mht-cet/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/mht-cet/40/40"
     },
     {
       "id": "comedk",
       "name": "COMEDK",
-      "logoUrl": "https://picsum.photos/seed/comedk/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/comedk/40/40"
     },
     {
       "id": "bitsat",
       "name": "BITSAT",
-      "logoUrl": "https://picsum.photos/seed/bitsat/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/bitsat/40/40"
     },
     {
       "id": "nda",
@@ -52,26 +46,22 @@
     {
       "id": "viteee",
       "name": "VITEEE",
-      "logoUrl": "https://picsum.photos/seed/viteee/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/viteee/40/40"
     },
     {
       "id": "manipal-met",
       "name": "Manipal (MET)",
-      "logoUrl": "https://picsum.photos/seed/met/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/met/40/40"
     },
     {
       "id": "iat-iiser",
       "name": "IAT (IISER)",
-      "logoUrl": "https://picsum.photos/seed/iiser/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/iiser/40/40"
     },
     {
       "id": "nest-niser",
       "name": "NEST (NISER)",
-      "logoUrl": "https://picsum.photos/seed/niser/40/40",
-      "badge": "New"
+      "logoUrl": "https://picsum.photos/seed/niser/40/40"
     }
   ]
 }

@@ -124,11 +124,13 @@ export default function ResourcesPage() {
                                     className="absolute bottom-0 right-0 rounded-full"
                                     data-ai-hint="logo"
                                 />
+                                {exam.badge && (
                                 <div className="absolute bottom-0 left-0 right-0 flex">
                                     <p className="text-xs text-white bg-pink-600/90 px-2 py-0.5 rounded-full">
                                         {exam.badge}
                                     </p>
                                 </div>
+                                )}
                             </div>
                         </button>
                     ))}
