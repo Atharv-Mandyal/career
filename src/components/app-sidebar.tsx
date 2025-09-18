@@ -11,6 +11,8 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
+  SidebarTrigger,
+  SidebarRail,
 } from '@/components/ui/sidebar';
 import AppLogo from '@/components/app-logo';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -35,8 +37,10 @@ export default function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon" className="md:flex">
+      <SidebarRail />
       <SidebarHeader>
         <AppLogo />
+        <SidebarTrigger />
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
