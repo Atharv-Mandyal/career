@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -7,6 +8,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { findLearningResources, FindLearningResourcesOutput } from '@/ai/flows/find-learning-resources';
 import { Loader2, Search, BookOpen, Film, Newspaper, AlertTriangle, Link as LinkIcon, PackageSearch } from 'lucide-react';
 import Link from 'next/link';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Image from 'next/image';
+import { Badge } from '@/components/ui/badge';
 
 function ResourceIcon({ type }: { type: string }) {
     switch (type) {
@@ -61,11 +65,47 @@ function ResourcesSkeleton() {
     );
 }
 
+function StaticResourceCard({
+    title,
+    description,
+    imageUrl,
+    imageHint
+} : {
+    title: string,
+    description: string,
+    imageUrl: string,
+    imageHint: string,
+}) {
+    return (
+        <Card className="group overflow-hidden">
+            <div className="aspect-square bg-muted flex items-center justify-center">
+                <Image 
+                    src={imageUrl}
+                    alt={title}
+                    width={400}
+                    height={400}
+                    className="object-cover w-full h-full transition-transform group-hover:scale-105"
+                    data-ai-hint={imageHint}
+                />
+            </div>
+            <div className="p-4">
+                <h3 className="font-bold text-base group-hover:text-primary transition-colors">{title}</h3>
+                <p className="text-sm text-muted-foreground">{description}</p>
+            </div>
+        </Card>
+    )
+}
+
 export default function ResourcesPage() {
     const [career, setCareer] = useState('');
     const [resources, setResources] = useState<FindLearningResourcesOutput | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
+    
+    const featuredResources = PlaceHolderImages.filter(p => p.imageHint.includes("featured resource"));
+    const recommendedResources = PlaceHolderImages.filter(p => p.imageHint.includes("recommended resource"));
+    const categories = ["Career Planning", "Skill Development", "Job Searching", "Networking", "Interview Prep", "Industry Insights"];
+
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -87,7 +127,7 @@ export default function ResourcesPage() {
     };
 
     return (
-        <div className="space-y-8">
+        <div className="space-y-12">
             <div className="text-center max-w-2xl mx-auto">
                 <h1 className="text-4xl font-bold font-headline">Resources Hub</h1>
                 <p className="text-muted-foreground mt-2">
@@ -131,14 +171,47 @@ export default function ResourcesPage() {
                 )}
                 
                 {!isLoading && !resources && !error && (
-                    <div className="text-center">
-                        <Card className="flex flex-col items-center justify-center p-12 text-center border-dashed max-w-xl mx-auto">
-                            <PackageSearch className="size-16 text-muted-foreground mb-4" />
-                            <CardTitle>Find Your Learning Path</CardTitle>
-                            <CardDescription className="mt-2 max-w-md mx-auto">
-                                Enter a topic above to get a list of recommended learning materials from Stella.
-                            </CardDescription>
-                        </Card>
+                    <div className="space-y-12">
+                        <section>
+                            <h2 className="text-2xl font-bold font-headline mb-4">Featured Resources</h2>
+                            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                                {featuredResources.map(res => (
+                                    <StaticResourceCard 
+                                        key={res.id}
+                                        title={res.description.split(" - ")[0]}
+                                        description={res.description.split(" - ")[1]}
+                                        imageUrl={res.imageUrl}
+                                        imageHint={res.imageHint}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+                        
+                        <section>
+                            <h2 className="text-2xl font-bold font-headline mb-4">Explore by Category</h2>
+                            <div className="flex flex-wrap gap-2">
+                                {categories.map(cat => (
+                                    <Badge key={cat} variant={cat === "Career Planning" ? "default" : "secondary"} className="text-base py-1 px-4 cursor-pointer hover:bg-primary/80">
+                                        {cat}
+                                    </Badge>
+                                ))}
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 className="text-2xl font-bold font-headline mb-4">Recommended for You</h2>
+                             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                                {recommendedResources.map(res => (
+                                    <StaticResourceCard 
+                                        key={res.id}
+                                        title={res.description.split(" - ")[0]}
+                                        description={res.description.split(" - ")[1]}
+                                        imageUrl={res.imageUrl}
+                                        imageHint={res.imageHint}
+                                    />
+                                ))}
+                            </div>
+                        </section>
                     </div>
                 )}
             </div>
