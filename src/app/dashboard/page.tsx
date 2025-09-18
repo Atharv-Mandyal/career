@@ -129,10 +129,10 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 p-6 flex flex-col justify-between text-primary-foreground lg:col-span-2">
+        <div className="rounded-xl p-6 flex flex-col justify-between lg:col-span-2 bg-gradient-to-br from-gray-100 to-gray-300 text-gray-800 dark:from-gray-900 dark:to-gray-700 dark:text-primary-foreground">
           <div>
             <h2 className="text-2xl font-bold font-headline">Ready to discover your path?</h2>
-            <p className="mt-2 max-w-prose text-primary-foreground/80">
+            <p className="mt-2 max-w-prose opacity-80">
               Our career assessment is the perfect starting point. It helps you understand your strengths and suggests careers that match your profile.
             </p>
           </div>
