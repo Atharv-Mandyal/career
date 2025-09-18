@@ -31,22 +31,22 @@ async function CareerStageCard() {
   } catch (error) {
     console.error("Failed to detect career stage:", error);
     return (
-        <Card className="h-full">
-            <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                    <Rocket className="size-5" />
-                    Your Career Stage
-                </CardTitle>
-                <CardDescription>Stella-powered career stage analysis</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <div className="flex flex-col items-center justify-center text-center p-4 border border-dashed rounded-lg bg-muted/50 h-full">
-                    <AlertTriangle className="size-8 text-destructive mb-2" />
-                    <p className="font-semibold text-destructive">Could not load analysis</p>
-                    <p className="text-sm text-muted-foreground">The Stella service may be temporarily unavailable.</p>
-                </div>
-            </CardContent>
-        </Card>
+      <Card className="h-full">
+          <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                  <Rocket className="size-5" />
+                  Your Career Stage
+              </CardTitle>
+              <CardDescription>Stella-powered career stage analysis</CardDescription>
+          </CardHeader>
+          <CardContent>
+              <div className="flex flex-col items-center justify-center text-center p-4 border border-dashed rounded-lg bg-muted/50 h-full">
+                  <AlertTriangle className="size-8 text-destructive mb-2" />
+                  <p className="font-semibold text-destructive">Could not load analysis</p>
+                  <p className="text-sm text-muted-foreground">The Stella service may be temporarily unavailable.</p>
+              </div>
+          </CardContent>
+      </Card>
     );
   }
 }
@@ -128,10 +128,10 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="rounded-xl p-6 flex flex-col justify-between lg:col-span-2 bg-gradient-to-br from-gray-700 to-gray-900 text-white dark:bg-gradient-to-br dark:from-[#4A90E2]/20 dark:to-[#4A90E2]/5">
+      <div className="rounded-xl p-6 flex flex-col justify-between lg:col-span-2 bg-gradient-to-br from-gray-700 to-gray-900 text-white dark:bg-gradient-to-br dark:from-[#4A90E2]/40 dark:to-[#4A90E2]/15">
           <div>
             <h2 className="text-2xl font-bold font-headline">Ready to discover your path?</h2>
-            <p className="mt-2 max-w-prose text-gray-300">
+            <p className="mt-2 max-w-prose text-gray-300 dark:text-gray-200">
               Our career assessment is the perfect starting point. It helps you understand your strengths and suggests careers that match your profile.
             </p>
           </div>
