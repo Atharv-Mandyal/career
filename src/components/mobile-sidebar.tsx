@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Briefcase, ClipboardList, LayoutDashboard, Map, User, Video, BookOpen, GraduationCap as CoursesIcon, Users } from 'lucide-react';
+import { Briefcase, ClipboardList, LayoutDashboard, Map, User, Video, BookOpen, GraduationCap as CoursesIcon, Users, ClipboardCheck } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -21,6 +21,7 @@ export default function MobileSidebar() {
 
   const navItems = [
     { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/questionnaire', label: 'Questionnaire', icon: ClipboardCheck },
     { href: '/assessment', label: 'Assessment', icon: ClipboardList },
     { href: '/careers', label: 'Careers', icon: Briefcase },
     { href: '/roadmap', label: 'Roadmap', icon: Map },
