@@ -4,56 +4,56 @@
     {
       "id": "user-1",
       "name": "Priya Sharma",
-      "location": "Mumbai, MH",
+      "location": "Koregaon Park, Pune",
       "imageUrl": "https://picsum.photos/seed/u1/200/200",
       "interests": ["Machine Learning", "Python", "Data Visualization"]
     },
     {
       "id": "user-2",
       "name": "Rohan Mehta",
-      "location": "Delhi, DL",
+      "location": "Hinjewadi, Pune",
       "imageUrl": "https://picsum.photos/seed/u2/200/200",
       "interests": ["React", "TypeScript", "Web Development", "UX Design"]
     },
     {
       "id": "user-3",
       "name": "Ananya Singh",
-      "location": "Bengaluru, KA",
+      "location": "Viman Nagar, Pune",
       "imageUrl": "https://picsum.photos/seed/u3/200/200",
       "interests": ["Digital Marketing", "SEO", "Content Strategy"]
     },
     {
       "id": "user-4",
       "name": "Vikram Kumar",
-      "location": "Chennai, TN",
+      "location": "Kothrud, Pune",
       "imageUrl": "https://picsum.photos/seed/u4/200/200",
       "interests": ["Cybersecurity", "Networking", "Penetration Testing"]
     },
     {
       "id": "user-5",
       "name": "Isha Gupta",
-      "location": "Pune, MH",
+      "location": "Aundh, Pune",
       "imageUrl": "https://picsum.photos/seed/u5/200/200",
       "interests": ["Game Design", "Unity", "C#", "Blender"]
     },
     {
       "id": "user-6",
       "name": "Arjun Reddy",
-      "location": "Hyderabad, TS",
+      "location": "Pimpri-Chinchwad, Pune",
       "imageUrl": "https://picsum.photos/seed/u6/200/200",
       "interests": ["Product Management", "Agile", "User Research"]
     },
     {
       "id": "user-7",
       "name": "Diya Joshi",
-      "location": "Ahmedabad, GJ",
+      "location": "Wakad, Pune",
       "imageUrl": "https://picsum.photos/seed/u7/200/200",
       "interests": ["UI/UX Design", "Figma", "Mobile App Design"]
     },
     {
       "id": "user-8",
       "name": "Kabir Desai",
-      "location": "Kolkata, WB",
+      "location": "Hadapsar, Pune",
       "imageUrl": "https://picsum.photos/seed/u8/200/200",
       "interests": ["Data Science", "R", "Statistics", "SQL"]
     }
