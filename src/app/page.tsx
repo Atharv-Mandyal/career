@@ -1,168 +1,56 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Rocket, History, AlertTriangle } from "lucide-react";
-import Link from "next/link";
-import React from 'react';
-import { detectCareerStage } from "@/ai/flows/detect-career-stage";
-import { Skeleton } from "@/components/ui/skeleton";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Compass } from 'lucide-react';
+import AppLogo from '@/components/app-logo';
 
-async function CareerStageCard() {
-  try {
-    const aiInput = {
-      studentProfile: "High school student interested in technology and arts, good at math.",
-      recentActivities: "Completed an online coding bootcamp, attended a design workshop.",
-    };
-    const { careerStage, guidance } = await detectCareerStage(aiInput);
-
-    return (
-      <Card className="h-full">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Rocket className="size-5" />
-            Your Career Stage
-          </CardTitle>
-          <CardDescription>{careerStage}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground">{guidance}</p>
-        </CardContent>
-      </Card>
-    );
-  } catch (error) {
-    console.error("Failed to detect career stage:", error);
-    return (
-        <Card className="h-full">
-            <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                    <Rocket className="size-5" />
-                    Your Career Stage
-                </CardTitle>
-                <CardDescription>Stella-powered career stage analysis</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <div className="flex flex-col items-center justify-center text-center p-4 border border-dashed rounded-lg bg-muted/50 h-full">
-                    <AlertTriangle className="size-8 text-destructive mb-2" />
-                    <p className="font-semibold text-destructive">Could not load analysis</p>
-                    <p className="text-sm text-muted-foreground">The Stella service may be temporarily unavailable.</p>
-                </div>
-            </CardContent>
-        </Card>
-    );
-  }
-}
-
-function ProgressTracker() {
-  const progressItems = [
-    { title: "Initial Assessment Completed", date: "August 15, 2024" },
-    { title: "Viewed 'Software Engineer' Career", date: "August 16, 2024" },
-    { title: "Saved 3 expert interviews", date: "August 18, 2024" },
-  ];
-
+export default function LandingPage() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <History className="size-5" />
-          Your Journey
-        </CardTitle>
-        <CardDescription>A timeline of your progress so far.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          {progressItems.map((item, index) => (
-            <div key={index} className="flex gap-4">
-              <div className="flex flex-col items-center">
-                <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                  <Check className="size-4" />
+    <div className="flex flex-col min-h-screen">
+      <header className="px-4 lg:px-6 h-14 flex items-center">
+        <Link href="/" className="flex items-center justify-center">
+          <AppLogo />
+          <span className="sr-only">EduRes</span>
+        </Link>
+        <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium hover:underline underline-offset-4"
+          >
+            Dashboard
+          </Link>
+        </nav>
+      </header>
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    Navigate Your Future with EduRes
+                  </h1>
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    Discover personalized career paths, gain essential skills, and build your portfolio. Your journey to a successful career starts here.
+                  </p>
                 </div>
-                {index < progressItems.length - 1 && (
-                  <div className="w-px flex-1 bg-border" />
-                )}
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Button asChild size="lg">
+                    <Link href="/dashboard">
+                      Get Started <ArrowRight className="ml-2 size-5" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
-              <div>
-                <p className="font-medium">{item.title}</p>
-                <p className="text-sm text-muted-foreground">{item.date}</p>
-              </div>
+              <Compass className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square size-64 text-primary" />
             </div>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-function PersonalizedChecklist() {
-  const checklistItems = [
-    "Complete your profile information",
-    "Take the full aptitude test",
-    "Explore 5 suggested career paths",
-    "Build your initial portfolio",
-  ];
-
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Next Steps</CardTitle>
-        <CardDescription>Your personalized checklist to stay on track.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ul className="space-y-3">
-          {checklistItems.map((item, index) => (
-            <li key={index} className="flex items-center gap-3">
-              <div className="flex size-5 shrink-0 items-center justify-center rounded-full border-2 border-primary/50" />
-              <span className="text-sm font-medium">{item}</span>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
-  );
-}
-
-export default function DashboardPage() {
-
-  return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold font-headline">Welcome to Your Dashboard</h1>
-        <p className="text-muted-foreground">Let's shape your future, one step at a time.</p>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="rounded-xl bg-gradient-to-br from-primary/80 to-accent/60 p-6 flex flex-col justify-between text-primary-foreground lg:col-span-2">
-          <div>
-            <h2 className="text-2xl font-bold font-headline">Ready to discover your path?</h2>
-            <p className="mt-2 max-w-prose text-primary-foreground/80">
-              Our career assessment is the perfect starting point. It helps you understand your strengths and suggests careers that match your profile.
-            </p>
           </div>
-          <div className="mt-6">
-            <Button asChild variant="secondary" size="lg">
-              <Link href="/assessment">Start Assessment</Link>
-            </Button>
-          </div>
-        </div>
-        
-        <React.Suspense fallback={
-            <Card>
-              <CardHeader>
-                <Skeleton className="h-6 w-3/4 mb-2" />
-                <Skeleton className="h-4 w-1/2" />
-              </CardHeader>
-              <CardContent>
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6 mt-2" />
-              </CardContent>
-            </Card>
-        }>
-            <CareerStageCard />
-        </React.Suspense>
-      </div>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <ProgressTracker />
-        <PersonalizedChecklist />
-      </div>
+        </section>
+      </main>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p className="text-xs text-muted-foreground">
+          &copy; {new Date().getFullYear()} EduRes. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }

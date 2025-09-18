@@ -19,7 +19,7 @@ export default function AppSidebar() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+    { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { href: '/assessment', label: 'Assessment', icon: ClipboardList },
     { href: '/careers', label: 'Careers', icon: Briefcase },
     { href: '/roadmap', label: 'Roadmap', icon: Map },
@@ -30,7 +30,7 @@ export default function AppSidebar() {
   ];
   
   const getIsActive = (href: string) => {
-    return href === '/' ? pathname === href : pathname.startsWith(href);
+    return href === '/dashboard' ? pathname === href : pathname.startsWith(href);
   }
 
   return (
