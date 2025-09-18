@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import AppLogo from '@/components/app-logo';
 import Image from 'next/image';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function LandingPage() {
   return (
@@ -38,6 +39,7 @@ export default function LandingPage() {
           </Link>
           <Button variant="ghost">Login</Button>
           <Button>Sign Up</Button>
+          <ThemeToggle />
         </nav>
       </header>
       <main className="flex-1 flex flex-col items-center justify-center text-center">
