@@ -3,8 +3,17 @@ import { Button } from '@/components/ui/button';
 import AppLogo from '@/components/app-logo';
 import Image from 'next/image';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu } from 'lucide-react';
 
 export default function LandingPage() {
+  const navLinks = [
+    { href: '#', label: 'Home' },
+    { href: '#', label: 'About' },
+    { href: '#', label: 'Services' },
+    { href: '#', label: 'Contact' },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <header className="px-4 lg:px-6 h-16 flex items-center">
@@ -13,34 +22,48 @@ export default function LandingPage() {
           <span className="sr-only">EduRes</span>
         </Link>
         <nav className="ml-auto hidden lg:flex gap-6 items-center">
-          <Link
-            href="#"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            href="#"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="#"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Services
-          </Link>
-          <Link
-            href="#"
-            className="text-sm font-medium hover:text-primary transition-colors"
-          >
-            Contact
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="text-sm font-medium hover:text-primary transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Button variant="ghost">Login</Button>
           <Button>Sign Up</Button>
           <ThemeToggle />
         </nav>
+        <div className="ml-auto lg:hidden">
+            <Sheet>
+                <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                        <Menu className="h-6 w-6" />
+                        <span className="sr-only">Toggle navigation menu</span>
+                    </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                    <div className="flex flex-col gap-4 p-4">
+                        <AppLogo />
+                        <nav className="grid gap-4">
+                            {navLinks.map((link) => (
+                                <Link key={link.label} href={link.href} className="font-medium">
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </nav>
+                        <div className="flex flex-col gap-2">
+                           <Button variant="ghost">Login</Button>
+                           <Button>Sign Up</Button>
+                        </div>
+                        <div className="pt-4">
+                            <ThemeToggle />
+                        </div>
+                    </div>
+                </SheetContent>
+            </Sheet>
+        </div>
       </header>
       <main className="flex-1 flex flex-col items-center justify-center text-center">
         <div className="space-y-6">
