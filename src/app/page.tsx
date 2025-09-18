@@ -67,14 +67,14 @@ export default function LandingPage() {
       </header>
       <main className="flex-1 flex flex-col items-center justify-center text-center">
         <div className="space-y-6">
-          <div className="p-2 bg-gradient-to-br from-primary/50 to-background rounded-2xl inline-block">
+          <div className="p-2 inline-block">
              <Image 
-                src="https://picsum.photos/seed/stella/400/400" 
-                alt="Stella AI placeholder"
+                src="/stella-character.png" 
+                alt="Stella AI Character"
                 width={400}
                 height={400}
                 className="rounded-xl"
-                data-ai-hint="abstract gradient"
+                data-ai-hint="character illustration"
               />
           </div>
           <div className="space-y-2">
