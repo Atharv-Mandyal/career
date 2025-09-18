@@ -74,6 +74,9 @@ export default function ResourcesPage() {
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    const popularExams = examResources.filter(exam => exam.category === 'Popular Exams');
+    const boardExams = examResources.filter(exam => exam.category === 'Board Exams');
+
     const handleSearch = async (searchTerm: string) => {
         if (!searchTerm.trim()) return;
 
@@ -136,7 +139,30 @@ export default function ResourcesPage() {
             <div className="space-y-6">
                 <h2 className="text-xl font-bold font-headline">Popular Exams</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {examResources.map((exam) => (
+                    {popularExams.map((exam) => (
+                        <button key={exam.id} onClick={() => handleSearch(exam.name)} className="group relative aspect-[4/3] flex flex-col justify-between rounded-lg bg-card p-4 text-left shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg border">
+                            <div className="flex-1">
+                                <h3 className="font-bold text-sm sm:text-base group-hover:text-primary transition-colors">{exam.name}</h3>
+                            </div>
+                            <div className="relative h-12 w-full mt-2">
+                                <Image
+                                    src={exam.logoUrl}
+                                    alt={`${exam.name} logo`}
+                                    width={40}
+                                    height={40}
+                                    className="absolute bottom-0 right-0 rounded-full"
+                                    data-ai-hint="logo"
+                                />
+                            </div>
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <div className="space-y-6">
+                <h2 className="text-xl font-bold font-headline">Board Exams</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    {boardExams.map((exam) => (
                         <button key={exam.id} onClick={() => handleSearch(exam.name)} className="group relative aspect-[4/3] flex flex-col justify-between rounded-lg bg-card p-4 text-left shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg border">
                             <div className="flex-1">
                                 <h3 className="font-bold text-sm sm:text-base group-hover:text-primary transition-colors">{exam.name}</h3>

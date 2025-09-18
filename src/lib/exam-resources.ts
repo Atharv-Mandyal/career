@@ -5,7 +5,7 @@ export type ExamResource = {
   id: string;
   name: string;
   logoUrl: string;
-  badge?: string;
+  category: string;
 };
 
 export const examResources: ExamResource[] = data.examResources;
