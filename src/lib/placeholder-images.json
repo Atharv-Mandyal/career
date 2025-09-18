@@ -90,54 +90,6 @@
       "description": "Cybersecurity Essentials",
       "imageUrl": "https://picsum.photos/seed/306/600/400",
       "imageHint": "security course"
-    },
-    {
-      "id": "featured-1",
-      "description": "Career Planning Guide - A comprehensive guide.",
-      "imageUrl": "https://picsum.photos/seed/401/400/400",
-      "imageHint": "featured resource book cover"
-    },
-    {
-      "id": "featured-2",
-      "description": "Tech Skills Bootcamp - Intensive bootcamp.",
-      "imageUrl": "https://picsum.photos/seed/402/400/400",
-      "imageHint": "featured resource tech"
-    },
-    {
-      "id": "featured-3",
-      "description": "Job Search Strategies - Find your dream job.",
-      "imageUrl": "https://picsum.photos/seed/403/400/400",
-      "imageHint": "featured resource document"
-    },
-    {
-      "id": "featured-4",
-      "description": "Networking for Success - Tips for networking.",
-      "imageUrl": "https://picsum.photos/seed/404/400/400",
-      "imageHint": "featured resource abstract"
-    },
-    {
-      "id": "recommended-1",
-      "description": "The Career Navigator - Step-by-step guide.",
-      "imageUrl": "https://picsum.photos/seed/501/400/400",
-      "imageHint": "recommended resource book"
-    },
-    {
-      "id": "recommended-2",
-      "description": "Digital Marketing Masterclass - Latest techniques.",
-      "imageUrl": "https://picsum.photos/seed/502/400/400",
-      "imageHint": "recommended resource certificate"
-    },
-    {
-      "id": "recommended-3",
-      "description": "Future of Work Trends - Stay ahead of trends.",
-      "imageUrl": "https://picsum.photos/seed/503/400/400",
-      "imageHint": "recommended resource article"
-    },
-    {
-      "id": "recommended-4",
-      "description": "Career Insights Podcast - Expert advice.",
-      "imageUrl": "https://picsum.photos/seed/504/400/400",
-      "imageHint": "recommended resource podcast"
     }
   ]
 }
