@@ -129,7 +129,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="rounded-xl bg-gradient-to-br from-primary/80 to-accent/60 p-6 flex flex-col justify-between text-primary-foreground lg:col-span-2">
+        <div className="rounded-xl bg-primary dark:bg-gradient-to-br from-primary/80 to-accent/60 p-6 flex flex-col justify-between text-primary-foreground lg:col-span-2">
           <div>
             <h2 className="text-2xl font-bold font-headline">Ready to discover your path?</h2>
             <p className="mt-2 max-w-prose text-primary-foreground/80">
