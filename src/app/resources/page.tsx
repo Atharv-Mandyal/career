@@ -8,6 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { findLearningResources, FindLearningResourcesOutput } from '@/ai/flows/find-learning-resources';
 import { Loader2, Search, BookOpen, Film, Newspaper, AlertTriangle, Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
+import { examResources } from '@/lib/exam-resources';
+import Image from 'next/image';
 
 function ResourceIcon({ type }: { type: string }) {
     switch (type) {
@@ -72,23 +74,28 @@ export default function ResourcesPage() {
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (!career.trim()) return;
+    const handleSearch = async (searchTerm: string) => {
+        if (!searchTerm.trim()) return;
 
         setIsLoading(true);
         setResources(null);
         setError(null);
+        setCareer(searchTerm);
 
         try {
-            const result = await findLearningResources({ career });
+            const result = await findLearningResources({ career: searchTerm });
             setResources(result);
         } catch (e) {
             console.error(e);
-            setError('Stella could not find resources for this career. Please try another one.');
+            setError('Stella could not find resources for this topic. Please try another one.');
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        handleSearch(career);
     };
 
     return (
@@ -96,13 +103,41 @@ export default function ResourcesPage() {
             <div>
                 <h1 className="text-3xl font-bold font-headline">Find Your Learning Path</h1>
                 <p className="text-muted-foreground">
-                    Enter a career, skill, or topic to find curated learning resources.
+                    Select a popular exam or search for any career, skill, or topic.
                 </p>
+            </div>
+
+            <div className="space-y-6">
+                <h2 className="text-xl font-bold font-headline">Popular Exams</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    {examResources.map((exam) => (
+                        <button key={exam.id} onClick={() => handleSearch(exam.name)} className="group relative aspect-[4/3] flex flex-col justify-between rounded-lg bg-card p-4 text-left shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg border">
+                            <div className="flex-1">
+                                <h3 className="font-bold text-sm sm:text-base group-hover:text-primary transition-colors">{exam.name}</h3>
+                            </div>
+                            <div className="relative h-12 w-full mt-2">
+                                <Image
+                                    src={exam.logoUrl}
+                                    alt={`${exam.name} logo`}
+                                    width={40}
+                                    height={40}
+                                    className="absolute bottom-0 right-0 rounded-full"
+                                    data-ai-hint="logo"
+                                />
+                                <div className="absolute bottom-0 left-0 right-0 flex">
+                                    <p className="text-xs text-white bg-pink-600/90 px-2 py-0.5 rounded-full">
+                                        {exam.badge}
+                                    </p>
+                                </div>
+                            </div>
+                        </button>
+                    ))}
+                </div>
             </div>
 
             <Card>
                 <CardHeader>
-                    <CardTitle>Search for Resources</CardTitle>
+                    <CardTitle>Search for Additional Resources</CardTitle>
                     <CardDescription>Get a list of courses, articles, and videos from Stella.</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -115,7 +150,7 @@ export default function ResourcesPage() {
                             aria-label="Career"
                         />
                         <Button type="submit" disabled={isLoading} size="lg">
-                            {isLoading ? (
+                            {isLoading && !resources ? (
                                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                             ) : (
                                 <Search className="mr-2 h-5 w-5" />
