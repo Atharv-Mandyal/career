@@ -69,7 +69,7 @@ export default function LandingPage() {
         <div className="space-y-6">
           <div className="p-2 inline-block">
              <Image 
-                src="/stella-character.png" 
+                src="/Stella-character.png" 
                 alt="Stella AI Character"
                 width={400}
                 height={400}

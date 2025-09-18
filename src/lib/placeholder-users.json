@@ -1,0 +1,61 @@
+
+{
+  "placeholderUsers": [
+    {
+      "id": "user-1",
+      "name": "Jasmine Patel",
+      "location": "San Francisco, CA",
+      "imageUrl": "https://picsum.photos/seed/u1/200/200",
+      "interests": ["Machine Learning", "Python", "Data Visualization"]
+    },
+    {
+      "id": "user-2",
+      "name": "Leo Kim",
+      "location": "New York, NY",
+      "imageUrl": "https://picsum.photos/seed/u2/200/200",
+      "interests": ["React", "TypeScript", "Web Development", "UX Design"]
+    },
+    {
+      "id": "user-3",
+      "name": "Sofia Garcia",
+      "location": "Austin, TX",
+      "imageUrl": "https://picsum.photos/seed/u3/200/200",
+      "interests": ["Digital Marketing", "SEO", "Content Strategy"]
+    },
+    {
+      "id": "user-4",
+      "name": "David Chen",
+      "location": "Chicago, IL",
+      "imageUrl": "https://picsum.photos/seed/u4/200/200",
+      "interests": ["Cybersecurity", "Networking", "Penetration Testing"]
+    },
+    {
+      "id": "user-5",
+      "name": "Emily Williams",
+      "location": "Seattle, WA",
+      "imageUrl": "https://picsum.photos/seed/u5/200/200",
+      "interests": ["Game Design", "Unity", "C#", "Blender"]
+    },
+    {
+      "id": "user-6",
+      "name": "Omar Johnson",
+      "location": "Boston, MA",
+      "imageUrl": "https://picsum.photos/seed/u6/200/200",
+      "interests": ["Product Management", "Agile", "User Research"]
+    },
+    {
+      "id": "user-7",
+      "name": "Hana Tanaka",
+      "location": "Los Angeles, CA",
+      "imageUrl": "https://picsum.photos/seed/u7/200/200",
+      "interests": ["UI/UX Design", "Figma", "Mobile App Design"]
+    },
+    {
+      "id": "user-8",
+      "name": "Alex Miller",
+      "location": "Denver, CO",
+      "imageUrl": "https://picsum.photos/seed/u8/200/200",
+      "interests": ["Data Science", "R", "Statistics", "SQL"]
+    }
+  ]
+}

@@ -1,8 +1,9 @@
+
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Briefcase, ClipboardList, LayoutDashboard, Map, User, Video, BookOpen, GraduationCap as CoursesIcon } from 'lucide-react';
+import { Briefcase, ClipboardList, LayoutDashboard, Map, User, Video, BookOpen, GraduationCap as CoursesIcon, Users } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -27,6 +28,7 @@ export default function MobileSidebar() {
     { href: '/portfolio', label: 'Portfolio', icon: User },
     { href: '/courses', label: 'Courses', icon: CoursesIcon },
     { href: '/resources', label: 'Resources', icon: BookOpen },
+    { href: '/connect', label: 'Connect', icon: Users },
   ];
 
   const getIsActive = (href: string) => {
