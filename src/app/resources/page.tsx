@@ -103,9 +103,35 @@ export default function ResourcesPage() {
             <div>
                 <h1 className="text-3xl font-bold font-headline">Find Your Learning Path</h1>
                 <p className="text-muted-foreground">
-                    Select a popular exam or search for any career, skill, or topic.
+                    Search for any career, skill, or topic, or select a popular exam below.
                 </p>
             </div>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle>Search for Resources</CardTitle>
+                    <CardDescription>Get a list of courses, articles, and videos from Stella.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <form onSubmit={handleSubmit} className="flex gap-2">
+                        <Input
+                            value={career}
+                            onChange={(e) => setCareer(e.target.value)}
+                            placeholder="e.g., Data Science, Public Speaking..."
+                            className="flex-grow"
+                            aria-label="Career"
+                        />
+                        <Button type="submit" disabled={isLoading} size="lg">
+                            {isLoading && !resources ? (
+                                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                            ) : (
+                                <Search className="mr-2 h-5 w-5" />
+                            )}
+                            Search
+                        </Button>
+                    </form>
+                </CardContent>
+            </Card>
 
             <div className="space-y-6">
                 <h2 className="text-xl font-bold font-headline">Popular Exams</h2>
@@ -129,32 +155,6 @@ export default function ResourcesPage() {
                     ))}
                 </div>
             </div>
-
-            <Card>
-                <CardHeader>
-                    <CardTitle>Search for Additional Resources</CardTitle>
-                    <CardDescription>Get a list of courses, articles, and videos from Stella.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <form onSubmit={handleSubmit} className="flex gap-2">
-                        <Input
-                            value={career}
-                            onChange={(e) => setCareer(e.target.value)}
-                            placeholder="e.g., Data Science, Public Speaking..."
-                            className="flex-grow"
-                            aria-label="Career"
-                        />
-                        <Button type="submit" disabled={isLoading} size="lg">
-                            {isLoading && !resources ? (
-                                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                            ) : (
-                                <Search className="mr-2 h-5 w-5" />
-                            )}
-                            Search
-                        </Button>
-                    </form>
-                </CardContent>
-            </Card>
             
             <div className="space-y-4">
                 {isLoading && <ResourcesSkeleton />}
