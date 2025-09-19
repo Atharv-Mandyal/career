@@ -144,16 +144,6 @@ export default function ResourcesPage() {
                             <div className="flex-1">
                                 <h3 className="font-bold text-sm sm:text-base group-hover:text-primary transition-colors">{exam.name}</h3>
                             </div>
-                            <div className="relative h-12 w-full mt-2">
-                                <Image
-                                    src={exam.logoUrl}
-                                    alt={`${exam.name} logo`}
-                                    width={40}
-                                    height={40}
-                                    className="absolute bottom-0 right-0 rounded-full"
-                                    data-ai-hint="logo"
-                                />
-                            </div>
                         </button>
                     ))}
                 </div>
@@ -166,16 +156,6 @@ export default function ResourcesPage() {
                         <button key={exam.id} onClick={() => handleSearch(exam.name)} className="group relative aspect-[4/3] flex flex-col justify-between rounded-lg bg-card p-4 text-left shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg border">
                             <div className="flex-1">
                                 <h3 className="font-bold text-sm sm:text-base group-hover:text-primary transition-colors">{exam.name}</h3>
-                            </div>
-                            <div className="relative h-12 w-full mt-2">
-                                <Image
-                                    src={exam.logoUrl}
-                                    alt={`${exam.name} logo`}
-                                    width={40}
-                                    height={40}
-                                    className="absolute bottom-0 right-0 rounded-full"
-                                    data-ai-hint="logo"
-                                />
                             </div>
                         </button>
                     ))}
