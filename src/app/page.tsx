@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import AppLogo from '@/components/app-logo';
 import Image from 'next/image';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
 export default function LandingPage() {
@@ -44,6 +44,7 @@ export default function LandingPage() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
+                    <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                     <div className="flex flex-col gap-4 p-4">
                         <AppLogo />
                         <nav className="grid gap-4">
