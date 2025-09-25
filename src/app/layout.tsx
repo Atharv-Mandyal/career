@@ -57,7 +57,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const isLandingPage = pathname === '/';
+  const noLayoutPages = ['/', '/signup'];
+  const isLayoutPage = !noLayoutPages.includes(pathname);
+
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -75,7 +77,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {isLandingPage ? children : <AppLayout>{children}</AppLayout>}
+            {isLayoutPage ? <AppLayout>{children}</AppLayout> : children}
             <Toaster />
           </ThemeProvider>
       </body>

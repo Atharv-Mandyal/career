@@ -31,8 +31,8 @@ export default function LandingPage() {
               {link.label}
             </Link>
           ))}
-          <Button variant="ghost">Login</Button>
-          <Button>Sign Up</Button>
+          <Button variant="ghost" asChild><Link href="/signup">Login</Link></Button>
+          <Button asChild><Link href="/signup">Sign Up</Link></Button>
           <ThemeToggle />
         </nav>
         <div className="ml-auto lg:hidden">
@@ -54,8 +54,8 @@ export default function LandingPage() {
                             ))}
                         </nav>
                         <div className="flex flex-col gap-2">
-                           <Button variant="ghost">Login</Button>
-                           <Button>Sign Up</Button>
+                           <Button variant="ghost" asChild><Link href="/signup">Login</Link></Button>
+                           <Button asChild><Link href="/signup">Sign Up</Link></Button>
                         </div>
                         <div className="pt-4">
                             <ThemeToggle />
